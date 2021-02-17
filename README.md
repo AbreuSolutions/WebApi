@@ -23,7 +23,7 @@
 
 ## Script gerar tabelas SQL Server
 
-## ============================================================
+## ==================================================
 CREATE TABLE [dbo].[TB_Produtos] (
     [Id]                   INT             IDENTITY (1, 1) NOT NULL,
     [DataCadastro]         DATETIME2 (7)   NOT NULL,
@@ -38,7 +38,7 @@ CREATE TABLE [dbo].[TB_Produtos] (
     CONSTRAINT [PK_Produtos] PRIMARY KEY CLUSTERED ([Id] ASC)
 );
 
-## ============================================================
+## ==================================================
 CREATE TABLE [dbo].[TB_Usuario] (
     [Id]             INT           IDENTITY (1, 1) NOT NULL,
     [DataCadastro]   DATETIME      NOT NULL,
@@ -52,7 +52,7 @@ CREATE TABLE [dbo].[TB_Usuario] (
     PRIMARY KEY CLUSTERED ([Id] ASC)
 );
 
-## ============================================================
+## ==================================================
 CREATE TABLE [dbo].[TB_Usuario_Login] (
     [Id]           INT           IDENTITY (1, 1) NOT NULL,
     [IdUsuario]    INT           NOT NULL,
@@ -65,7 +65,7 @@ CREATE TABLE [dbo].[TB_Usuario_Login] (
 
 ## Script gerar procedures SQL Server
 
-## ============================================================
+## ==================================================
 CREATE PROCEDURE [dbo].[SP_ProdutoAtualizar]
     @Id					  VARCHAR(11) = '0',
     @UltimaModificacaoPor VARCHAR(20) = '',
@@ -113,7 +113,7 @@ BEGIN
 
 END;
 
-## ============================================================
+## ==================================================
 CREATE PROCEDURE [dbo].[SP_ProdutoCadastrar]
     @DataCadastro         VARCHAR(24) = '',
     @CriadoPor            VARCHAR(20) = '',
@@ -177,7 +177,7 @@ BEGIN
 
 END;
 
-## ============================================================
+## ==================================================
 CREATE PROCEDURE [dbo].[SP_ProdutoListar]
     @Id					  VARCHAR(11) = '0',
     @UltimaModificacaoPor VARCHAR(20) = '',
@@ -223,7 +223,7 @@ BEGIN
 
 END;
 
-## ============================================================
+## ==================================================
 CREATE PROCEDURE [dbo].[SP_UsuarioAtualizar]
     @Id                   VARCHAR(11) = '',
     @DataNascimento       VARCHAR(11) = '',
@@ -279,7 +279,7 @@ BEGIN
 
 END;
 
-## ============================================================
+## ==================================================
 CREATE PROCEDURE [dbo].[SP_UsuarioCadastrar]
     @DataCadastro         VARCHAR(24) = '',
     @DataNascimento       VARCHAR(11) = '',
@@ -360,7 +360,7 @@ BEGIN
 
 END;
 
-## ============================================================
+## ==================================================
 CREATE PROCEDURE [dbo].[SP_UsuarioListar]
     @Id                   VARCHAR(11) = '',
     @Nome                 VARCHAR(50) = '',
@@ -407,7 +407,7 @@ BEGIN
 
 END;
 
-## ============================================================
+## ==================================================
 CREATE PROCEDURE [dbo].[SP_UsuarioLogin]
     @Email       VARCHAR(50) = '',
     @Password    VARCHAR(MAX) = ''
