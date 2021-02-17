@@ -1,0 +1,7 @@
+﻿@using Application;
+@{
+    Layout = "_Layout";
+
+    ConfigInfo oInfor = Util.ProjectInfo();
+    ViewData["appUrl"] = oInfor.appUrl;
+}
