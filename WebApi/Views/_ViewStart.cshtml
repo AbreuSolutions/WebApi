@@ -1,0 +1,16 @@
+﻿@using Application;
+@{
+    Layout = "_Layout";
+    try
+    {
+        var v_Mstr = "";
+        try { v_Mstr = ViewData["Mstr_Layout"].ToString(); } catch { }
+        if (!Util.IsNull(v_Mstr)) { Layout = v_Mstr; }
+        else { Layout = "_Layout"; }
+    }
+    catch { Layout = "_Layout"; }
+
+    ConfigInfo oInfor = Util.ProjectInfo();
+    ViewData["appUrl"] = oInfor.appUrl;
+    ViewData["appUrlApi"] = oInfor.Api_Url_Base;
+}

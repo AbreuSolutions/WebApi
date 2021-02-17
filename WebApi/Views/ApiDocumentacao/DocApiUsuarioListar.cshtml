@@ -1,0 +1,62 @@
+﻿
+<div class="row d-flex justify-content-center">
+
+    <div class="col-11 col-sm-12 ">
+        <h2>Usuário</h2>
+    </div>
+
+    <div class="col-11 col-sm-12 mt-4">
+        <h4>Esta documentação vai mostrar a forma correta de integrar com seus usuários na plataforma.</h4>
+        <hr />
+
+        <div class="Doc-Container">
+            <div class="oPost">
+                <h5><span>POST / json</span>/Usuario</h5>
+            </div>
+            <hr />
+            <div class="url">
+                @{
+                    string UrlP = ViewData["appUrlApi"] + "Usuario";
+                    string UrlH = ViewData["appUrlApi"] + "Usuario";
+                }
+                <div><b>Send Homologação : </b>@UrlP</div>
+                <div class="mb-4"><b>Send Produção : </b>@UrlH</div>
+
+                <div class="clearfix"><b>Atributos do Header</b></div>
+
+                <div class="mt-2">
+                    <div><b>Accept : </b>application/json</div>
+                    <div><b>Content-Type : </b>application/json</div>
+                    <div><b>Authorization : </b>Bearer [TOKEN-DO-ESTABELECIMENTO]</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="col-11 col-sm-12 mt-4">
+        <h4>Modelo de Body:</h4>
+        <div class="oJson-BG">
+            <div class="oJson-ML-0">{</div>
+            <div class="oJson-ML-20">"RequestType": "LISTAR",</div>
+            <div class="oJson-ML-20">"RequestObject": {</div>
+            <div class="oJson-ML-40">"Id": <span data-toggle="tooltip" data-placement="top" title="INT(11) Obrigatório">"0",</span></div>
+            <div class="oJson-ML-40">"Nome": <span data-toggle="tooltip" data-placement="top" title="VARCHAR(50) Obrigatório">"Fulano Cliente",</span></div>
+            <div class="oJson-ML-40">"Telefone": <span data-toggle="tooltip" data-placement="top" title="VARCHAR(20)">"+55 21 91234-5678",</span></div>
+            <div class="oJson-ML-40">"Perfil": <span data-toggle="tooltip" data-placement="top" title="VARCHAR(20) Obrigatório">"CLIENTE",</span></div>
+            <div class="oJson-ML-40">"Status": <span data-toggle="tooltip" data-placement="top" title="VARCHAR(1) Obrigatório">"N"</span></div>
+            <div class="oJson-ML-20">}</div>
+            <div class="oJson-ML-0">}</div>
+        </div>
+        <h4>Retorno:</h4>
+        <div class="oJson-BG">
+            <div class="oJson-ML-0">{</div>
+            <div class="oJson-ML-20">"Retorno": {</div>
+            <div class="oJson-ML-40">"Status": "000",</div>
+            <div class="oJson-ML-40">"Descricao": "Requisição efetuada com sucesso."</div>
+            <div class="oJson-ML-20">}</div>
+            <div class="oJson-ML-0">}</div>
+        </div>
+    </div>
+
+</div>
