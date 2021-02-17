@@ -1,29 +1,25 @@
-﻿ # ASP.NET Core WebApi
+# ASP.NET Core WebApi
 
-## Technologies
+## Tecnologias
 - ASP.NET Core 3.1 WebApi
 - REST Standards
 - .NET Core 3.1 / Standard 2.1 Libraries
 
-## Modificações em Domain
-- [x] Domain.Entities ==>> class Produto
-- [x] Domain.Entities ==>> class Usuario
-- [x] Domain.Entities ==>> class UsuarioLogin
+## Entidades
+- [x] class Produto
+- [x] class Usuario
+- [x] class UsuarioLogin
 
-## Modificações em Application
-- [x] Application.Util ==>> class Procedures
-- [x] Application.Util ==>> class Util
+## Ferramentas
+- [x] class Procedures
+- [x] class Util
 
-## Modificações em Infrastructure
-- [x] Infrastructure.Persistence.Migrations ==>> 20200724181511_Updat
-- [x] Infrastructure.Persistence.Migrations ==>> ApplicationDbContextModelSnapshot
-
-## Modificações em WebApi
+## WebApi - Controllers
 - [x] Foi aplicado um Layout responsivo em (Bootstrap 5.0) e diversas Views onde o Controllers se comunica com uma API hibrida feita em método POST
       feito diversos tratamentos e comunicação com futuros "Clientes" que queiram fazer requisições.
-- [x] WebApi.Controllers ==>> HomeController
-- [x] WebApi.Controllers.api ==>> ApiProdutoController
-- [x] WebApi.Controllers.api ==>> ApiUsuarioController
+- [x] Home
+- [x] ApiProduto
+- [x] ApiUsuario
 
 ## Script gerar tabelas SQL Server
 
