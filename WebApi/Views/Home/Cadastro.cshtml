@@ -1,0 +1,86 @@
+﻿@using Domain.Entities;
+@model Usuario;
+@{
+    ViewData["Title"] = "Cadastro";
+
+    string sStatus = "001";
+    try { sStatus = ViewData["Status"].ToString(); } catch { sStatus = "001"; }
+}
+
+<div class="container marketing mt-5">
+    <div class="row justify-content-center">
+
+        <div class="col-12 mb-3 text-center">
+            <h3 class="title-3">@ViewData["Title"]</h3>
+        </div>
+
+        <div class="col-12 col-sm-8 col-md-7 col-lg-6 mb-3">
+
+            @{
+                try
+                {
+                    switch (sStatus)
+                    {
+                        case "901":
+                            {
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Ops!</h5>
+                                        <p class="card-text">Ocorreu um erro inesperado.</p>
+                                    </div>
+                                </div>
+                            }
+                            break;
+                        case "001":
+                            {
+                                <form id="IdFrmPostLogIn" method="post" action="" class="card">
+                                    <div class="card-body">
+                                        <div class="row justify-content-center">
+
+                                            <div class="col-12 col-md-7 mb-3">
+                                                <label>Nome</label>
+                                                <input type="text" asp-for="Nome" class="form-control" autocomplete="off" required maxlength="50" />
+                                            </div>
+
+                                            <div class="col-12 col-md-5 mb-3">
+                                                <label>Sobrenome</label>
+                                                <input type="text" asp-for="SobreNome" class="form-control" autocomplete="off" required maxlength="20" />
+                                            </div>
+
+                                            <div class="col-12 col-md-7 mb-3">
+                                                <label>E-mail</label>
+                                                <input type="email" asp-for="Email" class="form-control" autocomplete="off" required maxlength="50" />
+                                            </div>
+
+                                            <div class="col-12 col-md-5 mb-3">
+                                                <label>Data nascimento</label>
+                                                <input type="date" asp-for="DataNascimento" class="form-control" autocomplete="off" required />
+                                            </div>
+
+                                            <div class="col-12 col-md-5 mb-3">
+                                                <label>Telefone</label>
+                                                <input type="text" asp-for="Telefone" class="form-control" autocomplete="off" required placeholder="+55 00 12345-1234" maxlength="20" />
+                                            </div>
+
+                                            <div class="col-12 col-md-4 mb-3">
+                                                <label>Password</label>
+                                                <input type="password" asp-for="Password" class="form-control" autocomplete="off" required placeholder="************" maxlength="80" />
+                                            </div>
+
+                                            <div class="col-12 col-md-3 mb-3 text-right" style="text-align: right;">
+                                                <button type="submit" class="btn btn-primary" style="margin-top: 24px; margin-bottom: 0px;">Cadastrar</button>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </form>
+                            }
+                            break;
+                    }
+                }
+                catch { }
+            }
+
+        </div>
+    </div>
+</div>
