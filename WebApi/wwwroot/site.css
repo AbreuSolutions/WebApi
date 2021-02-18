@@ -1,0 +1,256 @@
+﻿
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+@media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+    }
+}
+
+.visible {
+    display: normal !important;
+    visibility: visible !important;
+}
+
+.invisible {
+    display: none !important;
+    visibility: hidden !important;
+}
+
+a.navbar-brand {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+}
+
+/* Provide sufficient contrast against white background */
+a {
+    color: #000000 !important;
+}
+
+h1, h2, h3, h4, h5, h6, h7 {
+    display: block !important;
+    font-weight: 300 !important;
+}
+
+h1 {
+    font-size: 46px !important;
+    line-height: 44px !important;
+}
+
+h2 {
+    font-size: 38px !important;
+    line-height: 36px !important;
+}
+
+h3 {
+    font-size: 30px !important;
+    line-height: 28px !important;
+}
+
+h4 {
+    font-size: 26px !important;
+    line-height: 24px !important;
+}
+
+h5 {
+    font-size: 20px !important;
+    line-height: 18px !important;
+}
+
+h6 {
+    font-size: 16px !important;
+    line-height: 14px !important;
+}
+
+h7 {
+    font-size: 14px !important;
+    line-height: 12px !important;
+}
+
+.Crsr-P {
+    cursor: pointer !important;
+}
+
+.btn-primary {
+    color: #000000 !important;
+    background-color: #e8f0fe !important;
+    border-color: #ced4da !important;
+}
+
+.tooltip-inner {
+    max-width: 380px !important;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #fff !important;
+    background-color: #1b6ec2 !important;
+    border-color: #1861ac !important;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    font-size: 14px !important;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px !important;
+    }
+}
+
+.border-top {
+    border-top: 1px solid #e5e5e5 !important;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #e5e5e5 !important;
+}
+
+.box-shadow {
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05) !important;
+}
+
+button.accept-policy {
+    font-size: 1rem !important;
+    line-height: inherit !important;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    position: relative !important;
+    min-height: 100% !important;
+}
+
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px !important;
+}
+
+.footer {
+    position: absolute !important;
+    bottom: 0px !important;
+    width: 100% !important;
+    white-space: nowrap !important;
+    line-height: 60px !important; /* Vertically center the text there */
+}
+
+.Doc-Menu div h4, .Doc-Menu a h4 {
+    cursor: pointer !important;
+    font-size: 14px !important;
+    font-weight: 100 !important;
+    line-height: 16px !important;
+    margin: 0px 0px 0px 0px !important;
+    padding: 7px 0px 10px 0px !important;
+    border-bottom: solid 1px #e5e5e5 !important;
+}
+
+.Doc-Container {
+    padding: 12px 12px 12px 12px !important;
+    border: solid 1px #e5e5e5 !important;
+}
+
+    .Doc-Container .url div b {
+        float: left !important;
+        width: 180px !important;
+        margin-right: 20px !important;
+    }
+
+    .Doc-Container div table {
+        min-width: 100% !important;
+    }
+
+        .Doc-Container div table tbody tr {
+            border-bottom: solid 1px #e5e5e5 !important;
+        }
+
+            .Doc-Container div table tbody tr td {
+                text-align: left !important;
+                vertical-align: text-top !important;
+                padding: 2px 8px 2px 8px !important;
+            }
+
+            .Doc-Container div table thead tr th,
+            .Doc-Container div table tbody tr th {
+                font-weight: 600 !important;
+                vertical-align: text-top !important;
+            }
+
+.oPost {
+    display: block !important;
+    margin: 40px 0px 30px 0px !important;
+}
+
+    .oPost span {
+        color: #FFFFFF !important;
+        font-weight: 600 !important;
+        background-color: #337ab7 !important;
+        padding: 6px 6px 6px 6px !important;
+        margin-right: 20px !important;
+        border-radius: 6px !important;
+    }
+
+[class*="oJson-"] {
+    display: block !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+}
+
+.modal-title {
+    font-size: 24px !important;
+}
+
+.modal-body {
+    font-size: 15px !important;
+}
+
+.oJson-BG {
+    background-color: #f1f1f1 !important;
+    padding: 20px 20px 20px 20px !important;
+    margin-bottom: 20px !important;
+}
+
+.oJson-ML-0 {
+    margin-left: 0px !important;
+}
+
+.oJson-ML-20 {
+    margin-left: 20px !important;
+}
+
+.oJson-ML-40 {
+    margin-left: 40px !important;
+}
+
+.oJson-ML-60 {
+    margin-left: 60px !important;
+}
+
+.oJson-ML-80 {
+    margin-left: 80px !important;
+}
+
+.oJson-ML-100 {
+    margin-left: 100px !important;
+}
+
+[class*="zoom-"] {
+    background-color: #ffffff !important;
+    transition: transform .3s !important;
+}
+
+.zoom-10:hover {
+    -ms-transform: scale(1.1) !important;
+    -webkit-transform: scale(1.1) !important;
+    transform: scale(1.1) !important;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15) !important;
+    z-index: 3000 !important;
+}
