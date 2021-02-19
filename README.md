@@ -14,11 +14,13 @@ Foi aplicado um Layout responsivo em (Bootstrap 5.0) e diversas Views onde o Con
 Foi aplicado um formulário de acesso, em back-end onde foi tratado com "CookieAuthenticationDefaults / ClaimsIdentity" com "Claim" totalmente fora de padrões conhecidos e com seus dados criptografados.
 
 ![](https://github.com/AbreuSolutions/WebApi/blob/main/Dos/Login.jpg "Claims")
+![](https://github.com/AbreuSolutions/WebApi/blob/main/Dos/Claims.jpg "Claims")
 
 Foi aplicado um Controllers "ApiDocumentacao" onde o usuário devidamente autenticado tem acesso a documentação onde explica de como utilizar o API, através de requisições.
 
-![](https://github.com/AbreuSolutions/WebApi/blob/main/Dos/Claims.jpg "Claims")
+![](https://github.com/AbreuSolutions/WebApi/blob/main/Dos/DocUsuarioCadastrar.jpg "Claims")
 
+---
 
 ## Entidades
 - [x] Produto / TB_Produtos
