@@ -12,12 +12,10 @@
 Foi aplicado um Layout responsivo em (Bootstrap 5.0) e diversas Views onde o Controllers se comunica com uma API híbrida feita em método POST feito diversos tratamentos e comunicação com futuros "Clientes" que queiram fazer requisições.
 
 Foi aplicado um formulário de acesso, em back-end onde foi tratado com "CookieAuthenticationDefaults / ClaimsIdentity" com "Claim" totalmente fora de padrões conhecidos e com seus dados criptografados.
+![](https://github.com/AbreuSolutions/WebApi/blob/main/Dos/Login.jpg "Claims")
 
 Foi aplicado um Controllers "ApiDocumentacao" onde o usuário devidamente autenticado tem acesso a documentação onde explica de como utilizar o API, através de requisições.
-
-![](https://github.com/AbreuSolutions/WebApi/Dos/Claims.jpg "Claims")
-
-## 
+![](https://github.com/AbreuSolutions/WebApi/blob/main/Dos/Claims.jpg "Claims")
 
 ## Entidades
 - [x] Produto / TB_Produtos
@@ -51,7 +49,7 @@ CREATE TABLE [dbo].[TB_Produtos] (
     CONSTRAINT [PK_Produtos] PRIMARY KEY CLUSTERED ([Id] ASC)
 );
 
-## 
+---
 CREATE TABLE [dbo].[TB_Usuario] (
     [Id]             INT           IDENTITY (1, 1) NOT NULL,
     [DataCadastro]   DATETIME      NOT NULL,
@@ -65,7 +63,7 @@ CREATE TABLE [dbo].[TB_Usuario] (
     PRIMARY KEY CLUSTERED ([Id] ASC)
 );
 
-## 
+---
 CREATE TABLE [dbo].[TB_Usuario_Login] (
     [Id]           INT           IDENTITY (1, 1) NOT NULL,
     [IdUsuario]    INT           NOT NULL,
@@ -126,7 +124,7 @@ BEGIN
 
 END;
 
-## 
+---
 CREATE PROCEDURE [dbo].[SP_ProdutoCadastrar]
     @DataCadastro         VARCHAR(24) = '',
     @CriadoPor            VARCHAR(20) = '',
@@ -190,7 +188,7 @@ BEGIN
 
 END;
 
-## 
+---
 CREATE PROCEDURE [dbo].[SP_ProdutoListar]
     @Id					  VARCHAR(11) = '0',
     @UltimaModificacaoPor VARCHAR(20) = '',
@@ -236,7 +234,7 @@ BEGIN
 
 END;
 
-## 
+---
 CREATE PROCEDURE [dbo].[SP_UsuarioAtualizar]
     @Id                   VARCHAR(11) = '',
     @DataNascimento       VARCHAR(11) = '',
@@ -292,7 +290,7 @@ BEGIN
 
 END;
 
-## 
+---
 CREATE PROCEDURE [dbo].[SP_UsuarioCadastrar]
     @DataCadastro         VARCHAR(24) = '',
     @DataNascimento       VARCHAR(11) = '',
@@ -373,7 +371,7 @@ BEGIN
 
 END;
 
-## 
+---
 CREATE PROCEDURE [dbo].[SP_UsuarioListar]
     @Id                   VARCHAR(11) = '',
     @Nome                 VARCHAR(50) = '',
@@ -420,7 +418,7 @@ BEGIN
 
 END;
 
-## 
+---
 CREATE PROCEDURE [dbo].[SP_UsuarioLogin]
     @Email       VARCHAR(50) = '',
     @Password    VARCHAR(MAX) = ''
