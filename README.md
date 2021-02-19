@@ -15,6 +15,8 @@ Foi aplicado um formulário de acesso, em back-end onde foi tratado com "CookieA
 
 Foi aplicado um Controllers "ApiDocumentacao" onde o usuário devidamente autenticado tem acesso a documentação onde explica de como utilizar o API, através de requisições.
 
+![](https://github.com/AbreuSolutions/WebApi/Dos/Claims.jpg "Claims")
+
 ## 
 
 ## Entidades
