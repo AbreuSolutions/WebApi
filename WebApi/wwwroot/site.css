@@ -1,4 +1,69 @@
 ﻿
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    font-size: 14px !important;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px !important;
+    }
+}
+
+.border-top {
+    border-top: 1px solid #e5e5e5 !important;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #e5e5e5 !important;
+}
+
+.box-shadow {
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05) !important;
+}
+
+button.accept-policy {
+    font-size: 1rem !important;
+    line-height: inherit !important;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    position: relative !important;
+    min-height: 100% !important;
+}
+
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px !important;
+}
+
+.footer {
+    position: absolute !important;
+    bottom: 0px !important;
+    width: 100% !important;
+    white-space: nowrap !important;
+    line-height: 60px !important; /* Vertically center the text there */
+}
+
+.navbar-toggler {
+    color: $navbar-dark-color;
+    border-color: $navbar-dark-toggler-border-color;
+}
+
+
+.visible {
+    display: normal !important;
+    visibility: visible !important;
+}
+
+.invisible {
+    display: none !important;
+    visibility: hidden !important;
+}
+
 .bd-placeholder-img {
     font-size: 1.125rem;
     text-anchor: middle;
@@ -11,16 +76,6 @@
     .bd-placeholder-img-lg {
         font-size: 3.5rem;
     }
-}
-
-.visible {
-    display: normal !important;
-    visibility: visible !important;
-}
-
-.invisible {
-    display: none !important;
-    visibility: hidden !important;
 }
 
 a.navbar-brand {
@@ -94,53 +149,10 @@ h7 {
     border-color: #1861ac !important;
 }
 
-/* Sticky footer styles
--------------------------------------------------- */
-html {
-    font-size: 14px !important;
-}
-
-@media (min-width: 768px) {
-    html {
-        font-size: 16px !important;
-    }
-}
-
-.border-top {
-    border-top: 1px solid #e5e5e5 !important;
-}
-
-.border-bottom {
-    border-bottom: 1px solid #e5e5e5 !important;
-}
-
-.box-shadow {
-    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05) !important;
-}
-
-button.accept-policy {
-    font-size: 1rem !important;
-    line-height: inherit !important;
-}
-
-/* Sticky footer styles
--------------------------------------------------- */
-html {
-    position: relative !important;
-    min-height: 100% !important;
-}
-
-body {
-    /* Margin bottom by footer height */
-    margin-bottom: 60px !important;
-}
-
-.footer {
-    position: absolute !important;
-    bottom: 0px !important;
+.form-label {
     width: 100% !important;
-    white-space: nowrap !important;
-    line-height: 60px !important; /* Vertically center the text there */
+    text-align: left !important;
+    margin-bottom: 0px !important;
 }
 
 .Doc-Menu div h4, .Doc-Menu a h4 {
