@@ -39,27 +39,27 @@
                                         <div class="row justify-content-center">
 
                                             <div class="col-12 mb-3">
-                                                <label>Nome</label>
+                                                <label class="form-label">Nome</label>
                                                 <input type="text" asp-for="Nome" class="form-control" autocomplete="off" required maxlength="50" />
                                             </div>
 
                                             <div class="col-12 mb-3">
-                                                <label>Código de barras</label>
+                                                <label class="form-label">Código de barras</label>
                                                 <input type="text" asp-for="CodigoDeBarras" class="form-control" autocomplete="off" required maxlength="100" />
                                             </div>
 
                                             <div class="col-12 mb-3">
-                                                <label>Descrição</label>
+                                                <label class="form-label">Descrição</label>
                                                 <textarea id="Descricao" name="Descricao" class="form-control" autocomplete="off" required style="height: 360px;">@Model.Descricao</textarea>
                                             </div>
 
                                             <div class="col-12 col-md-4 mb-3">
-                                                <label>Preço</label>
+                                                <label class="form-label">Preço</label>
                                                 <input type="text" asp-for="Preco" class="form-control" autocomplete="off" required maxlength="24" />
                                             </div>
 
                                             <div class="col-12 col-md-4 mb-3">
-                                                <label>Status</label>
+                                                <label class="form-label">Status</label>
                                                 @Html.Raw(Util.Select("Status", "form-control", "", "|A|I|X", "Escolha|Ativo|Inativo|Encerrado"))
                                             </div>
 
