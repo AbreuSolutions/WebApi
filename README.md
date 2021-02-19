@@ -2,22 +2,25 @@
 
 ## Tecnologias
 - ASP.NET Core 3.1 WebApi
-- REST Standards
 - .NET Core 3.1 / Standard 2.1 Libraries
+- Newtonsoft / Json.NET
+- REST Standards
+- Bootstrap v5.0
 
 ## Entidades
-- [x] class Produto
-- [x] class Usuario
-- [x] class UsuarioLogin
+- [x] Produto / TB_Produtos
+- [x] Usuario / TB_Usuario
+- [x] UsuarioLogin / TB_Usuario_Login
 
 ## Ferramentas
-- [x] class Procedures
-- [x] class Util
+- [x] Procedures
+- [x] Util
 
 ## WebApi - Controllers
 - [x] Foi aplicado um Layout responsivo em (Bootstrap 5.0) e diversas Views onde o Controllers se comunica com uma API hibrida feita em método POST
       feito diversos tratamentos e comunicação com futuros "Clientes" que queiram fazer requisições.
 - [x] Home
+- [x] ApiDocumentacao
 - [x] ApiProduto
 - [x] ApiUsuario
 
