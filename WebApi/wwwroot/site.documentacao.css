@@ -1,0 +1,122 @@
+﻿
+
+a {
+    color: #045aa4 !important;
+}
+
+h1, h2, h3, h4, h5, h6, h7 {
+    display: block !important;
+    color: #045aa4 !important;
+}
+
+.Doc-Menu div h4, .Doc-Menu a h4 {
+    cursor: pointer !important;
+    font-size: 14px !important;
+    font-weight: 100 !important;
+    line-height: 16px !important;
+    margin: 0px 0px 0px 0px !important;
+    padding: 7px 0px 10px 0px !important;
+    border-bottom: solid 1px #e5e5e5 !important;
+}
+
+.Doc-Container {
+    padding: 12px 12px 12px 12px !important;
+    border: solid 1px #e5e5e5 !important;
+}
+
+    .Doc-Container .url div b {
+        float: left !important;
+        width: 180px !important;
+        margin-right: 20px !important;
+    }
+
+    .Doc-Container div table {
+        min-width: 100% !important;
+    }
+
+        .Doc-Container div table tbody tr {
+            border-bottom: solid 1px #e5e5e5 !important;
+        }
+
+            .Doc-Container div table tbody tr td {
+                text-align: left !important;
+                vertical-align: text-top !important;
+                padding: 2px 8px 2px 8px !important;
+            }
+
+            .Doc-Container div table thead tr th,
+            .Doc-Container div table tbody tr th {
+                font-weight: 600 !important;
+                vertical-align: text-top !important;
+            }
+
+.oPost {
+    display: block !important;
+    margin: 40px 0px 30px 0px !important;
+}
+
+    .oPost span {
+        color: #FFFFFF !important;
+        font-weight: 600 !important;
+        background-color: #337ab7 !important;
+        padding: 6px 6px 6px 6px !important;
+        margin-right: 20px !important;
+        border-radius: 6px !important;
+    }
+
+[class*="oJson-"] {
+    display: block !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+}
+
+.modal-title {
+    font-size: 24px !important;
+}
+
+.modal-body {
+    font-size: 15px !important;
+}
+
+.oJson-BG {
+    background-color: #f1f1f1 !important;
+    padding: 20px 20px 20px 20px !important;
+    margin-bottom: 20px !important;
+}
+
+.oJson-ML-0 {
+    margin-left: 0px !important;
+}
+
+.oJson-ML-20 {
+    margin-left: 20px !important;
+}
+
+.oJson-ML-40 {
+    margin-left: 40px !important;
+}
+
+.oJson-ML-60 {
+    margin-left: 60px !important;
+}
+
+.oJson-ML-80 {
+    margin-left: 80px !important;
+}
+
+.oJson-ML-100 {
+    margin-left: 100px !important;
+}
+
+[class*="zoom-"] {
+    background-color: #ffffff !important;
+    transition: transform .3s !important;
+}
+
+.zoom-10:hover {
+    -ms-transform: scale(1.1) !important;
+    -webkit-transform: scale(1.1) !important;
+    transform: scale(1.1) !important;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15) !important;
+    z-index: 3000 !important;
+}

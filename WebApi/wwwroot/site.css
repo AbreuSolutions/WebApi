@@ -48,12 +48,6 @@ body {
     line-height: 60px !important; /* Vertically center the text there */
 }
 
-.navbar-toggler {
-    color: $navbar-dark-color;
-    border-color: $navbar-dark-toggler-border-color;
-}
-
-
 .visible {
     display: normal !important;
     visibility: visible !important;
