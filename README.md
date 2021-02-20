@@ -20,6 +20,10 @@ Foi aplicado um Controllers "ApiDocumentacao" onde o usuário devidamente autent
 
 ![](https://github.com/AbreuSolutions/WebApi/blob/main/Dos/DocUsuarioCadastrar.jpg "Claims")
 
+Foi aplicado dois Layouts responsivo em (Bootstrap 5.0) onde o 1º foi aplicado no portal e o 2º foi aplicado na documetação.
+
+![](https://github.com/AbreuSolutions/WebApi/blob/main/Dos/Layouts.jpg "Claims")
+
 ---
 
 ## Entidades
