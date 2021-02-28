@@ -1,6 +1,8 @@
 ﻿
 @{
     ViewData["Title"] = "Minha conta";
+    string sPerfil = "Cliente";
+    try { sPerfil = ViewData["Perfil"].ToString().ToUpper(); } catch { sPerfil = "Cliente"; }
 }
 
 <div class="container marketing mt-5">
@@ -19,39 +21,44 @@
                         <div class="col-6 mb-3">
                             <div class="mt-3">
                                 <i class="fal fa-dice fa-4x"></i><br />
-                                <label class="form-label">Meus dados</label><br />
+                                <label>Meus dados</label><br />
                                 <a href="@ViewData["appUrl"]Meus-Dados" class="">+ detalhe</a>
                             </div>
                         </div>
 
-                        <div class="col-6 mb-3">
-                            <div class="mt-3">
-                                <i class="fal fa-gifts fa-4x"></i><br />
-                                <label class="form-label">Cadastrar produto</label><br />
-                                <a href="@ViewData["appUrl"]Cadastrar-Produto" class="">+ detalhe</a>
-                            </div>
-                        </div>
+                        @{
+                            if (sPerfil == "ADM")
+                            {
+                                <div class="col-6 mb-3">
+                                    <div class="mt-3">
+                                        <i class="fal fa-gifts fa-4x"></i><br />
+                                        <label>Cadastrar produto</label><br />
+                                        <a href="@ViewData["appUrl"]Cadastrar-Produto" class="">+ detalhe</a>
+                                    </div>
+                                </div>
 
-                        <div class="col-6 mb-3">
-                            <div class="mt-3">
-                                <i class="fal fa-user fa-4x"></i><br />
-                                <label class="form-label">API Usuário</label><br />
-                                <a href="@ViewData["appUrl"]Api/Documentação/Usuário" class="">+ detalhe</a>
-                            </div>
-                        </div>
+                                <div class="col-6 mb-3">
+                                    <div class="mt-3">
+                                        <i class="fal fa-user fa-4x"></i><br />
+                                        <label>API Usuário</label><br />
+                                        <a href="@ViewData["appUrl"]Api/Documentação/Usuário" class="">+ detalhe</a>
+                                    </div>
+                                </div>
 
-                        <div class="col-6 mb-3">
-                            <div class="mt-3">
-                                <i class="fal fa-gifts fa-4x"></i><br />
-                                <label class="form-label">API Produto</label><br />
-                                <a href="@ViewData["appUrl"]Api/Documentação/Produto" class="">+ detalhe</a>
-                            </div>
-                        </div>
+                                <div class="col-6 mb-3">
+                                    <div class="mt-3">
+                                        <i class="fal fa-gifts fa-4x"></i><br />
+                                        <label>API Produto</label><br />
+                                        <a href="@ViewData["appUrl"]Api/Documentação/Produto" class="">+ detalhe</a>
+                                    </div>
+                                </div>
+                            }
+                        }
 
                         <div class="col-6 mb-3">
                             <div class="mt-3">
                                 <i class="fal fa-power-off fa-3x"></i><br />
-                                <label class="form-label">Encerrar minha sessão</label><br />
+                                <label>Encerrar minha sessão</label><br />
                                 <a href="@ViewData["appUrl"]Sair" class="">sair</a>
                             </div>
                         </div>
