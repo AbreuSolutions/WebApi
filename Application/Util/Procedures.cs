@@ -1,5 +1,4 @@
 ﻿using Domain.Entities;
-using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json.Linq;
 
 namespace Application
@@ -253,14 +252,5 @@ namespace Application
         }
 
         //===================================================================================================================
-    }
-
-    public class App_DbContext : DbContext
-    {
-        public App_DbContext(DbContextOptions<App_DbContext> options) : base(options)
-        {
-        }
-
-        public DbSet<TB_Produtos> Produtos { get; set; }
     }
 }
