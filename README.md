@@ -13,16 +13,20 @@ Foi aplicado um Layout responsivo em (Bootstrap 5.0) e diversas Views onde o Con
 
 Foi aplicado um formulário de acesso, em back-end onde foi tratado com "CookieAuthenticationDefaults / ClaimsIdentity" com "Claim" totalmente fora de padrões conhecidos e com seus dados criptografados.
 
-![](https://github.com/AbreuSolutions/WebApi/blob/main/Dos/Login.jpg "Claims")
+![](https://github.com/AbreuSolutions/WebApi/blob/main/Dos/Login.jpg "Login")
 ![](https://github.com/AbreuSolutions/WebApi/blob/main/Dos/Claims.jpg "Claims")
 
 Foi aplicado um Controllers "ApiDocumentacao" onde o usuário devidamente autenticado tem acesso a documentação onde explica de como utilizar o API, através de requisições.
 
-![](https://github.com/AbreuSolutions/WebApi/blob/main/Dos/DocUsuarioCadastrar.jpg "Claims")
+![](https://github.com/AbreuSolutions/WebApi/blob/main/Dos/DocUsuarioCadastrar.jpg "API Documentação")
 
 Foi aplicado dois Layouts responsivo em (Bootstrap 5.0) onde o 1º foi aplicado no portal e o 2º foi aplicado na documetação.
 
-![](https://github.com/AbreuSolutions/WebApi/blob/main/Dos/Layouts.jpg "Claims")
+![](https://github.com/AbreuSolutions/WebApi/blob/main/Dos/Layouts.jpg "Layouts")
+
+Foi aplicado uma forma de trabalhar com vários Bancos de Dados ao mesmo tempo, com identificação de ambiente (LocalHost e Produção).
+
+![](https://github.com/AbreuSolutions/WebApi/blob/main/Dos/VariosBancosDeDados.jpg "Banco de Dados")
 
 ---
 
