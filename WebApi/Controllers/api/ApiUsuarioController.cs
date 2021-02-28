@@ -22,7 +22,7 @@ namespace WebApi.Controllers
         public IActionResult Post([FromBody] ObjectRequest oRequest)
         {
             sStatus = "001";
-            Usuario oUsuario = null;
+            TB_Usuario oUsuario = null;
             ConfigInfo oInfor = Util.ProjectInfo();
             JObject _DsJson = new JObject();
             try
@@ -73,7 +73,7 @@ namespace WebApi.Controllers
                     if (!Util.IsNull(sRequestObject))
                     {
                         sRequestObject = Util.FormatarHtml(sRequestObject);
-                        oUsuario = JsonConvert.DeserializeObject<Usuario>(sRequestObject);
+                        oUsuario = JsonConvert.DeserializeObject<TB_Usuario>(sRequestObject);
                     }
                 }
                 catch

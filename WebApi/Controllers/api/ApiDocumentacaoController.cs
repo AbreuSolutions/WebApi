@@ -6,13 +6,24 @@ namespace WebApi.Controllers
 {
     public class ApiDocumentacaoController : Controller
     {
+        public AppUser CurrentUser { get { return new AppUser(this.User as ClaimsPrincipal); } }
+
         [HttpGet]
         [Authorize]
         [Route("Api/Documentação/Usuário")]
         public IActionResult DocApiUsuario()
         {
             ViewData["Mstr_Layout"] = "_Layout_Docmentacao";
-            return View();
+            if (CurrentUser.Perfil != "ADM")
+            {
+                ViewData["Card_Title"] = "Ops!";
+                ViewData["Card_Text"] = "Seu perfil não permite acesso a está página.";
+                return View("_View_Alert");
+            }
+            else
+            {
+                return View();
+            }
         }
 
         [HttpGet]
@@ -21,7 +32,16 @@ namespace WebApi.Controllers
         public IActionResult DocApiUsuarioCadastar()
         {
             ViewData["Mstr_Layout"] = "_Layout_Docmentacao";
-            return View();
+            if (CurrentUser.Perfil != "ADM")
+            {
+                ViewData["Card_Title"] = "Ops!";
+                ViewData["Card_Text"] = "Seu perfil não permite acesso a está página.";
+                return View("_View_Alert");
+            }
+            else
+            {
+                return View();
+            }
         }
 
         [HttpGet]
@@ -30,7 +50,16 @@ namespace WebApi.Controllers
         public IActionResult DocApiUsuarioAtualizar()
         {
             ViewData["Mstr_Layout"] = "_Layout_Docmentacao";
-            return View();
+            if (CurrentUser.Perfil != "ADM")
+            {
+                ViewData["Card_Title"] = "Ops!";
+                ViewData["Card_Text"] = "Seu perfil não permite acesso a está página.";
+                return View("_View_Alert");
+            }
+            else
+            {
+                return View();
+            }
         }
 
         [HttpGet]
@@ -39,7 +68,16 @@ namespace WebApi.Controllers
         public IActionResult DocApiUsuarioListar()
         {
             ViewData["Mstr_Layout"] = "_Layout_Docmentacao";
-            return View();
+            if (CurrentUser.Perfil != "ADM")
+            {
+                ViewData["Card_Title"] = "Ops!";
+                ViewData["Card_Text"] = "Seu perfil não permite acesso a está página.";
+                return View("_View_Alert");
+            }
+            else
+            {
+                return View();
+            }
         }
 
         [HttpGet]
@@ -48,7 +86,16 @@ namespace WebApi.Controllers
         public IActionResult DocApiProduto()
         {
             ViewData["Mstr_Layout"] = "_Layout_Docmentacao";
-            return View();
+            if (CurrentUser.Perfil != "ADM")
+            {
+                ViewData["Card_Title"] = "Ops!";
+                ViewData["Card_Text"] = "Seu perfil não permite acesso a está página.";
+                return View("_View_Alert");
+            }
+            else
+            {
+                return View();
+            }
         }
 
         [HttpGet]
@@ -57,7 +104,16 @@ namespace WebApi.Controllers
         public IActionResult DocApiProdutoCadastar()
         {
             ViewData["Mstr_Layout"] = "_Layout_Docmentacao";
-            return View();
+            if (CurrentUser.Perfil != "ADM")
+            {
+                ViewData["Card_Title"] = "Ops!";
+                ViewData["Card_Text"] = "Seu perfil não permite acesso a está página.";
+                return View("_View_Alert");
+            }
+            else
+            {
+                return View();
+            }
         }
 
         [HttpGet]
@@ -66,7 +122,16 @@ namespace WebApi.Controllers
         public IActionResult DocApiProdutoAtualizar()
         {
             ViewData["Mstr_Layout"] = "_Layout_Docmentacao";
-            return View();
+            if (CurrentUser.Perfil != "ADM")
+            {
+                ViewData["Card_Title"] = "Ops!";
+                ViewData["Card_Text"] = "Seu perfil não permite acesso a está página.";
+                return View("_View_Alert");
+            }
+            else
+            {
+                return View();
+            }
         }
 
         [HttpGet]
@@ -75,7 +140,16 @@ namespace WebApi.Controllers
         public IActionResult DocApiProdutoListar()
         {
             ViewData["Mstr_Layout"] = "_Layout_Docmentacao";
-            return View();
+            if (CurrentUser.Perfil != "ADM")
+            {
+                ViewData["Card_Title"] = "Ops!";
+                ViewData["Card_Text"] = "Seu perfil não permite acesso a está página.";
+                return View("_View_Alert");
+            }
+            else
+            {
+                return View();
+            }
         }
     }
 }

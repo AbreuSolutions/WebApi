@@ -21,7 +21,7 @@ namespace WebApi.Controllers
         [Route("Api/Produto")]
         public IActionResult Post([FromBody] ObjectRequest oRequest)
         {
-            Produto oProduto = null;
+            TB_Produtos oProduto = null;
             ConfigInfo oInfor = Util.ProjectInfo();
             JObject _DsJson = new JObject();
             try
@@ -72,7 +72,7 @@ namespace WebApi.Controllers
                     if (!Util.IsNull(sRequestObject))
                     {
                         sRequestObject = Util.FormatarHtml(sRequestObject);
-                        oProduto = JsonConvert.DeserializeObject<Produto>(sRequestObject);
+                        oProduto = JsonConvert.DeserializeObject<TB_Produtos>(sRequestObject);
                     }
                 }
                 catch

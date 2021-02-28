@@ -39,7 +39,7 @@ namespace WebApi.Controllers
 
         [HttpPost]
         [Route("Cadastro")]
-        public IActionResult Cadastro(Usuario obj)
+        public IActionResult Cadastro(TB_Usuario obj)
         {
             ConfigInfo oInfor = Util.ProjectInfo();
             ViewData["Mstr_Layout"] = "_Layout";
@@ -98,7 +98,7 @@ namespace WebApi.Controllers
         [Route("Acessar/{Id=1}")]
         [Route("Entrar/{Id=2}")]
         [Route("Login/{Id=3}")]
-        public IActionResult LogIn(string Id, Usuario obj)
+        public IActionResult LogIn(string Id, TB_Usuario obj)
         {
             ConfigInfo oInfor = Util.ProjectInfo();
             ViewData["Mstr_Layout"] = "_Layout";
@@ -158,7 +158,7 @@ namespace WebApi.Controllers
         [HttpGet]
         [HttpPost]
         [Route("Produtos")]
-        public IActionResult Produtos(Produto obj)
+        public IActionResult Produtos(TB_Produtos obj)
         {
             ConfigInfo oInfor = Util.ProjectInfo();
             ViewData["Mstr_Layout"] = "_Layout";
@@ -186,14 +186,14 @@ namespace WebApi.Controllers
         public IActionResult CadastrarProduto()
         {
             ViewData["Mstr_Layout"] = "_Layout";
-            Produto obj = new Produto();
+            TB_Produtos obj = new TB_Produtos();
             return View(obj);
         }
 
         [HttpPost]
         [Authorize]
         [Route("Cadastrar-Produto")]
-        public IActionResult CadastrarProduto(Produto obj)
+        public IActionResult CadastrarProduto(TB_Produtos obj)
         {
             ConfigInfo oInfor = Util.ProjectInfo();
             ViewData["Mstr_Layout"] = "_Layout";
@@ -238,7 +238,7 @@ namespace WebApi.Controllers
         {
             ConfigInfo oInfor = Util.ProjectInfo();
             ViewData["Mstr_Layout"] = "_Layout";
-            Produto obj = new Produto();
+            TB_Produtos obj = new TB_Produtos();
             ViewBag.Dados = null;
             try { obj.Id = Convert.ToInt32(Util.Descrypt(Id)); } catch { }
             try
@@ -249,7 +249,7 @@ namespace WebApi.Controllers
                     JObject jObj = Util.FormatarObjeto("LISTAR", jsonSTRINGResult);
                     jObj = Util.GetRequest("POST", oInfor.Api_Url_Base + "Produto", "Authorization", oInfor.Api_Key, jObj);
                     ViewBag.Dados = jObj["Dados"];
-                    try { obj = JsonConvert.DeserializeObject<Produto>(jObj["Dados"][0].ToString()); } catch { }
+                    try { obj = JsonConvert.DeserializeObject<TB_Produtos>(jObj["Dados"][0].ToString()); } catch { }
                 }
             }
             catch { }
@@ -259,7 +259,7 @@ namespace WebApi.Controllers
         [HttpPost]
         [Authorize]
         [Route("Atualizar-Produto")]
-        public IActionResult AtualizarProduto(Produto obj)
+        public IActionResult AtualizarProduto(TB_Produtos obj)
         {
             ConfigInfo oInfor = Util.ProjectInfo();
             ViewData["Mstr_Layout"] = "_Layout";
@@ -300,6 +300,8 @@ namespace WebApi.Controllers
         public IActionResult MinhaConta()
         {
             ViewData["Mstr_Layout"] = "_Layout";
+            ViewData["Perfil"] = null;
+            try { ViewData["Perfil"] = CurrentUser.Perfil; } catch { ViewData["Perfil"] = "Cliente"; }
             return View();
         }
 
@@ -315,7 +317,7 @@ namespace WebApi.Controllers
         {
             ConfigInfo oInfor = Util.ProjectInfo();
             ViewData["Mstr_Layout"] = "_Layout";
-            Usuario obj = new Usuario();
+            TB_Usuario obj = new TB_Usuario();
             ViewBag.Dados = null;
             try { obj.Id = CurrentUser.Key; } catch { }
             try { obj.Status = CurrentUser.Status; } catch { }
@@ -327,7 +329,7 @@ namespace WebApi.Controllers
                     JObject jObj = Util.FormatarObjeto("LISTAR", jsonSTRINGResult);
                     jObj = Util.GetRequest("POST", oInfor.Api_Url_Base + "Usuario", "Authorization", oInfor.Api_Key, jObj);
                     ViewBag.Dados = jObj["Dados"];
-                    try { obj = JsonConvert.DeserializeObject<Usuario>(jObj["Dados"][0].ToString()); } catch { }
+                    try { obj = JsonConvert.DeserializeObject<TB_Usuario>(jObj["Dados"][0].ToString()); } catch { }
                 }
             }
             catch { }
@@ -342,7 +344,7 @@ namespace WebApi.Controllers
         [HttpPost]
         [Authorize]
         [Route("Meus-Dados")]
-        public IActionResult MeusDados(Usuario obj)
+        public IActionResult MeusDados(TB_Usuario obj)
         {
             ConfigInfo oInfor = Util.ProjectInfo();
             ViewData["Mstr_Layout"] = "_Layout";
