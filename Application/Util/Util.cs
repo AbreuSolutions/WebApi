@@ -15,6 +15,10 @@ namespace Application
     {
         //===================================================================================================================
 
+        private static string DB_Id;
+
+        //===================================================================================================================
+
         public static string Label(string ToolId, string ToolValue, string ArrayIds, string ArrayLabels, string Title = "")
         {
             string sHtml = "";
@@ -305,17 +309,43 @@ namespace Application
                     oJson = r.ReadToEnd();
                     JObject oObject = JObject.Parse(oJson);
                     //----------------------------------------------------------------------------------------------------------------------------------------
-                    try { oDados.DefaultConnection = oObject["ConnectionStrings"]["DefaultConnection"].ToString(); } catch { oDados.DefaultConnection = ""; }
-                    //----------------------------------------------------------------------------------------------------------------------------------------
                     try { oDados.appUrl = oObject["Url.Base"].ToString(); } catch { oDados.appUrl = "./"; }
+                    try { oDados.appDataBase = oObject["Data.Base"].ToString(); } catch { oDados.appDataBase = "Local"; }
                     try { oDados.Api_Url_Base = oObject["API"]["Url.Base"].ToString(); } catch { oDados.Api_Url_Base = ""; }
                     try { oDados.Api_Key = oObject["API"]["Key"].ToString(); } catch { oDados.Api_Key = ""; }
+                    //----------------------------------------------------------------------------------------------------------------------------------------
+                    if (!IsNull(DB_Id))
+                    {
+                        string DB_Dir = "";
+                        try { DB_Dir = oDados.appDirectory.Replace(@"\bin\Debug\netcoreapp3.1", ""); } catch { }
+                        if (oDados.appDataBase.ToUpper().Substring(0, 1) == "L")
+                        {
+                            // Bancos de dados em Local Host
+                            switch (DB_Id)
+                            {
+                                case "BD_001": { oDados.DefaultConnection = @"Data Source=(LocalDB)\MSSQLLocalDB; AttachDbFilename=" + DB_Dir + @"Data Sources\BD_Teste_A.mdf; Integrated Security=True "; } break;
+                                case "BD_002": { oDados.DefaultConnection = @"Data Source=(LocalDB)\MSSQLLocalDB; AttachDbFilename=" + DB_Dir + @"Data Sources\BD_Teste_B.mdf; Integrated Security=True "; } break;
+                            }
+                        }
+                        else
+                        {
+                            // Bancos de dados em Produção
+                            switch (DB_Id)
+                            {
+                                case "BD_001": { oDados.DefaultConnection = @"Server=001.002.3.004\SQL12,1433; Database=DB_Sistema_Em_Producao_A; User Id=CONN; Password=********; Integrated Security=True; "; } break;
+                                case "BD_002": { oDados.DefaultConnection = @"Server=001.002.3.004\SQL12,1433; Database=DB_Sistema_Em_Producao_B; User Id=CONN; Password=********; Integrated Security=True; "; } break;
+                            }
+                        }
+                    }
                     //----------------------------------------------------------------------------------------------------------------------------------------
                 }
             }
 
             return oDados;
         }
+
+        //===================================================================================================================
+        //===================================================================================================================
 
         private static SqlConnection sConn;
         private static SqlCommand cmd;
@@ -394,8 +424,9 @@ namespace Application
             return dsRet;
         }
 
-        private static DataSet getDataSet(string SQL, int Pagina = 0, int Itens = 0)
+        private static DataSet getDataSet(string DB = "BD_001", string SQL = "", int Pagina = 0, int Itens = 0)
         {
+            DB_Id = DB;
             DataSet dsDS = new DataSet();
             DataSet pgDS = new DataSet();
             DataSet dsRet = new DataSet();
@@ -487,7 +518,7 @@ namespace Application
             return dsRet;
         }
 
-        public static JObject JObjectDS(string SQL, int Pagina = 0, int Itens = 0)
+        public static JObject JObjectDS(string DB = "BD_001", string SQL = "", int Pagina = 0, int Itens = 0)
         {
             JObject _DsJson = new JObject();
             DataSet Ret_DS = new DataSet();
@@ -498,7 +529,7 @@ namespace Application
 
             try
             {
-                Ret_DS = getDataSet(SQL, Pagina, Itens);
+                Ret_DS = getDataSet(DB, SQL, Pagina, Itens);
 
                 try
                 {
@@ -542,6 +573,7 @@ namespace Application
     {
         //----------------------------------------------------
         public string appUrl { get; set; }
+        public string appDataBase { get; set; }
         public string appDirectory { get; set; }
         public string projectAmbient { get; set; }
         public string projectPathBin { get; set; }

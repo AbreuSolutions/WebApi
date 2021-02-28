@@ -1,4 +1,5 @@
 ﻿using Domain.Entities;
+using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json.Linq;
 
 namespace Application
@@ -13,7 +14,7 @@ namespace Application
 
         //===================================================================================================================
 
-        public static JObject ProdutoCadastrar(Produto obj = null)
+        public static JObject ProdutoCadastrar(TB_Produtos obj = null)
         {
             obj.DataCadastro = Util.FormatarData("", "UST");
             obj.CriadoPor = Util.ValidarEntrada(obj.CriadoPor, 20, "");
@@ -32,7 +33,7 @@ namespace Application
             _SQL += "'" + obj.Descricao + "', ";
             _SQL += "'" + obj.Preco + "', ";
             _SQL += "'" + obj.Status + "' ";
-            _DsJson = Util.JObjectDS(_SQL);
+            _DsJson = Util.JObjectDS("BD_002", _SQL);
             try { _Id = _DsJson["Dados"][0]["Id"].ToString(); } catch { _Id = "0"; }
             try { _Status = _DsJson["Dados"][0]["Status"].ToString(); } catch { _Status = ""; }
             try { _Descricao = _DsJson["Dados"][0]["Descricao"].ToString(); } catch { _Descricao = ""; }
@@ -49,7 +50,7 @@ namespace Application
 
         //===================================================================================================================
 
-        public static JObject ProdutoAtualizar(Produto obj = null)
+        public static JObject ProdutoAtualizar(TB_Produtos obj = null)
         {
             obj.UltimaModificacaoPor = Util.ValidarEntrada(obj.UltimaModificacaoPor, 20, "");
             obj.UltimaModificacao = Util.FormatarData("", "US");
@@ -67,7 +68,7 @@ namespace Application
             _SQL += "'" + obj.Descricao + "', ";
             _SQL += "'" + obj.Preco + "', ";
             _SQL += "'" + obj.Status + "' ";
-            _DsJson = Util.JObjectDS(_SQL);
+            _DsJson = Util.JObjectDS("BD_002", _SQL);
             try { _Id = _DsJson["Dados"][0]["Id"].ToString(); } catch { _Id = "0"; }
             try { _Status = _DsJson["Dados"][0]["Status"].ToString(); } catch { _Status = ""; }
             try { _Descricao = _DsJson["Dados"][0]["Descricao"].ToString(); } catch { _Descricao = ""; }
@@ -84,7 +85,7 @@ namespace Application
 
         //===================================================================================================================
 
-        public static JObject ProdutoListar(Produto obj = null)
+        public static JObject ProdutoListar(TB_Produtos obj = null)
         {
             _Id = "0";
             try { _Id = Util.SomenteNumeros(obj.Id.ToString()); } catch { }
@@ -102,7 +103,7 @@ namespace Application
             _SQL += "'" + obj.Descricao + "', ";
             _SQL += "'" + obj.Preco + "', ";
             _SQL += "'" + obj.Status + "' ";
-            _DsJson = Util.JObjectDS(_SQL);
+            _DsJson = Util.JObjectDS("BD_002", _SQL);
             try { _Status = _DsJson["Retorno"]["Status"].ToString(); } catch { _Status = ""; }
             try { _Descricao = _DsJson["Retorno"]["Descricao"].ToString(); } catch { _Descricao = ""; }
 
@@ -117,7 +118,7 @@ namespace Application
 
         //===================================================================================================================
 
-        public static JObject UsuarioCadastrar(Usuario obj = null)
+        public static JObject UsuarioCadastrar(TB_Usuario obj = null)
         {
             obj.DataCadastro = Util.FormatarData("", "UST");
             obj.DataNascimento = Util.FormatarData(obj.DataNascimento, "US");
@@ -140,7 +141,7 @@ namespace Application
             _SQL += "'" + obj.Perfil + "', ";
             _SQL += "'" + obj.Password + "', ";
             _SQL += "'" + obj.Status + "' ";
-            _DsJson = Util.JObjectDS(_SQL);
+            _DsJson = Util.JObjectDS("BD_001", _SQL);
             try { _Id = _DsJson["Dados"][0]["Id"].ToString(); } catch { _Id = "0"; }
             try { _Status = _DsJson["Dados"][0]["Status"].ToString(); } catch { _Status = ""; }
             try { _Descricao = _DsJson["Dados"][0]["Descricao"].ToString(); } catch { _Descricao = ""; }
@@ -157,7 +158,7 @@ namespace Application
 
         //===================================================================================================================
 
-        public static JObject UsuarioAtualizar(Usuario obj = null)
+        public static JObject UsuarioAtualizar(TB_Usuario obj = null)
         {
             obj.DataNascimento = Util.FormatarData(obj.DataNascimento, "US");
             obj.Nome = Util.ValidarEntrada(obj.Nome, 50, "");
@@ -177,7 +178,7 @@ namespace Application
             _SQL += "'" + obj.Telefone + "', ";
             _SQL += "'" + obj.Perfil + "', ";
             _SQL += "'" + obj.Status + "' ";
-            _DsJson = Util.JObjectDS(_SQL);
+            _DsJson = Util.JObjectDS("BD_001", _SQL);
             try { _Id = _DsJson["Dados"][0]["Id"].ToString(); } catch { _Id = "0"; }
             try { _Status = _DsJson["Dados"][0]["Status"].ToString(); } catch { _Status = ""; }
             try { _Descricao = _DsJson["Dados"][0]["Descricao"].ToString(); } catch { _Descricao = ""; }
@@ -194,7 +195,7 @@ namespace Application
 
         //===================================================================================================================
 
-        public static JObject UsuarioListar(Usuario obj = null)
+        public static JObject UsuarioListar(TB_Usuario obj = null)
         {
             _Id = "0";
             try { _Id = Util.SomenteNumeros(obj.Id.ToString()); } catch { }
@@ -213,7 +214,7 @@ namespace Application
             _SQL += "'" + obj.Telefone + "', ";
             _SQL += "'" + obj.Perfil + "', ";
             _SQL += "'" + obj.Status + "' ";
-            _DsJson = Util.JObjectDS(_SQL);
+            _DsJson = Util.JObjectDS("BD_001", _SQL);
             try { _Status = _DsJson["Retorno"]["Status"].ToString(); } catch { _Status = ""; }
             try { _Descricao = _DsJson["Retorno"]["Descricao"].ToString(); } catch { _Descricao = ""; }
 
@@ -228,7 +229,7 @@ namespace Application
 
         //===================================================================================================================
 
-        public static JObject UsuarioLogin(Usuario obj = null)
+        public static JObject UsuarioLogin(TB_Usuario obj = null)
         {
             _Id = "0";
             obj.Email = Util.ValidarEntrada(obj.Email, 50, "");
@@ -238,7 +239,7 @@ namespace Application
             _SQL += "EXEC SP_UsuarioLogin ";
             _SQL += "'" + obj.Email + "', ";
             _SQL += "'" + obj.Password + "' ";
-            _DsJson = Util.JObjectDS(_SQL);
+            _DsJson = Util.JObjectDS("BD_001", _SQL);
             try { _Status = _DsJson["Retorno"]["Status"].ToString(); } catch { _Status = ""; }
             try { _Descricao = _DsJson["Retorno"]["Descricao"].ToString(); } catch { _Descricao = ""; }
 
@@ -252,5 +253,14 @@ namespace Application
         }
 
         //===================================================================================================================
+    }
+
+    public class App_DbContext : DbContext
+    {
+        public App_DbContext(DbContextOptions<App_DbContext> options) : base(options)
+        {
+        }
+
+        public DbSet<TB_Produtos> Produtos { get; set; }
     }
 }
